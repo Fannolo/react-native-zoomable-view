@@ -51,7 +51,7 @@ class ReactNativeZoomableView extends Component {
 
   componentDidUpdate(prevProps) {
     const { zoomEnabled, initialZoom } = this.props;
-    if (prevProps.zoomEnabled && !zoomEnabled) {
+    if (prevProps.zoomEnabled && prevProps.initialZoom !== initialZoom) {
       this.setState({
         zoomLevel: initialZoom,
         ...initialState
